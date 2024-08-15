@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
-import { Alert, StatusBar, Text, View } from 'react-native'
+import { Alert, StatusBar, Text, TouchableOpacity, View } from 'react-native'
 import { PRIMARY_COLOR } from '../../commons/contsns'
 import { TitleConponent } from '../components/TitleComponents'
 import { BodyComponent } from '../components/BodyComponent'
 import { styles } from '../../theme/appTheme'
 import { InputComponents } from '../components/InputComponents'
 import { ButtonComponent } from '../components/ButtonComponent'
+import { CommonActions, useNavigation } from '@react-navigation/native'
+import { User } from '../../navigaitor/StackNavigator'
+interface Props{
+    users:User[];
+    handleAddUse:(user:User)=>void;
+}
 
 
 interface FormRegister {
@@ -18,7 +24,7 @@ interface FormRegister {
 
 
 
-export const Registro = () => {
+export const Registro = ({users,handleAddUse}:Props) => {
     const [formRegister, setFormRegister] = useState<FormRegister>({
         nombre: '',
         cedula: '',
@@ -29,11 +35,13 @@ export const Registro = () => {
 
     const [hiddenPassword, setHiddenPassword] = useState<boolean>(true);
 
+    const navigation =useNavigation();
+
     const handleSetValues = (name: string, value: string) => {
         setFormRegister({ ...formRegister, [name]: value })
     }
 
-    const handleRegister = () => {
+    const handleSignUp = () => {
         if (
             formRegister.nombre === '' ||
             formRegister.cedula === '' ||
@@ -51,9 +59,37 @@ export const Registro = () => {
                 'Las contraseñas no coinciden!')
             return
         }
+         
+        if(verifyUser()!=null ){
+            Alert.alert(
+                'Error',
+                'El usuario ya existe!'
+            );
+            return;
+        }
 
-        console.log(formRegister)
+        const getIdUsers=users.map(user => user.id);
+
+        const getNewId= Math.max(...getIdUsers)+1;
+        const newUser:User={
+            id:getNewId,
+            email:formRegister.email,
+            password:formRegister.contraseña
+        }
+
+        handleAddUse(newUser);
+        Alert.alert
+        (   
+            'BIENVENIDO A BOUTIQUE!',
+            'Gracias por Registrarse'
+        );
+        navigation.goBack();
         
+    }
+
+    const verifyUser=()=>{
+        const existUser=users.filter(user =>user.email ===formRegister.email)[0];
+        return existUser;
     }
 
     return (
@@ -86,9 +122,15 @@ export const Registro = () => {
                         hasIcon={true}
                         sethiddenPaswword={() => setHiddenPassword(!hiddenPassword)}
                     />
-                </View>
-                <ButtonComponent textButton='Crear Cuenta' onPress={handleRegister} />
+                  </View>
+                  <ButtonComponent textButton="Registrate" onPress={handleSignUp} />
+      <TouchableOpacity onPress={() => navigation.dispatch(
+        CommonActions.navigate({ name: 'Home' })
+      )}>
+        <Text style={styles.textRedirection}>Ya tienes una cuenta? Iniciar Sesión</Text>
+      </TouchableOpacity>
             </BodyComponent>
-        </View>
+    </View>
+    
     )
 }
