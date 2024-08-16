@@ -32,10 +32,12 @@ export const ModalProductos = ({ isVisible, setShowModal, product, changeStockPr
     };
 
     return (
-        <Modal visible={isVisible} animationType='fade' transparent={true}>
+        <Modal visible={isVisible} animationType='fade' 
+        transparent={true}>
             <View style={[styles.contentPrincipal, styles.shadowStyle]}>
                 <View style={{ ...styles.contentModal, width: width * 0.80 }}>
                     <View style={styles.headModal}>
+                        
                         <Text style={styles.titleModal}>
                             {product.name} - ${product.price.toFixed(2)}
                         </Text>
@@ -48,6 +50,7 @@ export const ModalProductos = ({ isVisible, setShowModal, product, changeStockPr
                             />
                         </View>
                     </View>
+                   
 
                     <View style={styles.contentBodyModal}>
                         <Image
@@ -55,6 +58,10 @@ export const ModalProductos = ({ isVisible, setShowModal, product, changeStockPr
                             style={styles.imageModal}
                         />
                     </View>
+
+                    <View style={styles.descriptionContainer}>
+                <Text style={styles.descriptionText}>{product.description}</Text>
+            </View>
 
                     {product.stock === 0 ? (
                         <Text style={styles.messageStock}>¡Producto Agotado!</Text>

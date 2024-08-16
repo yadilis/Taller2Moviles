@@ -16,8 +16,7 @@ export interface Product {
     stock: number;
     pathImage: string;
     description: string;  
-    size: string[];  
-    color: string[];  
+     
 }
 
 export interface Car {
@@ -32,72 +31,64 @@ export const Tienda = () => {
         {
             id: 1,
             name: 'Pantalón Casual',
-            price: 49.99,
-            stock: 0,
+            price: 27,
+            stock: 12,
             pathImage: 'https://i.pinimg.com/736x/52/c3/2f/52c32f3755ab1bd2b35f588da178ba57.jpg',
-            description: 'Pantalón casual cómodo y elegante, perfecto para cualquier ocasión.',
-            size: ['S', 'M', 'L', 'XL'],
-            color: ['Azul', 'Negro', 'Gris']
+            description: 'Pantalón casual cómodo y elegante, perfecto para cualquier ocasión.'
+    
+            
         },
         {
             id: 2,
             name: 'Camiseta Básica',
-            price: 19.99,
-            stock: 50,
+            price: 6.50,
+            stock: 10,
             pathImage: 'https://i.pinimg.com/736x/ee/2f/23/ee2f23f34bbd62e4b28efdf297dff5eb.jpg',
             description: 'Camiseta básica de algodón, disponible en varios colores.',
-            size: ['S', 'M', 'L'],
-            color: ['Blanco', 'Negro', 'Rojo', 'Azul']
+           
         },
         {
             id: 3,
             name: 'Chaqueta Jean',
-            price: 69.99,
+            price: 13.50,
             stock: 15,
             pathImage: 'https://i.pinimg.com/736x/70/61/82/706182d10cad43652419f18b9e21707a.jpg',
             description: 'Chaqueta manga larga con terminacion en botón metálico',
-            size: ['M', 'L', 'XL'],
-            color: ['Negro', 'Verde', 'Azul']
+           
         },
         {
             id: 4,
             name: 'Falda',
-            price: 59.99,
-            stock: 25,
+            price: 12,
+            stock: 8,
             pathImage: 'https://i.pinimg.com/736x/f8/ef/0d/f8ef0d31096355f2f317f8e2e6f3b49c.jpg',
             description: 'Falda de Mezquilla S & Unicolor tipo cargo .',
-            size: ['S', 'M', 'L', 'XL'],
-            color: ['Azul Oscuro', 'Negro','Beige','Morada']
+           
         },
         {
             id: 5,
-            name: 'Top camisola',
-            price: 39.99,
-            stock: 30,
+            name: 'Top ',
+            price: 5,
+            stock: 3,
             pathImage: 'https://i.pinimg.com/564x/6a/26/8d/6a268debcda51617c5dacb29ddc03373.jpg',
             description: 'Top casuales con tiras gruesas,tela llana y corte en V.',
-            size: ['S', 'M', 'L', 'XL'],
-            color: ['Gris', 'Negro', 'Rojo']
+            
         },
         {
             id: 6,
             name: 'Vestido Elegante',
-            price: 79.99,
+            price: 10,
             stock: 10,
             pathImage: 'https://i.pinimg.com/564x/8f/4a/76/8f4a7659ccecffbb3cff004f0fa1cc9f.jpg',
             description: 'Vestido llano con apertura, perfecto para ocasiones especiales.',
-            size: ['S', 'M', 'L'],
-            color: ['Blanco', 'Azul', 'Rosa']
         },
         {
             id: 7,
             name: 'Zapatos Deportivos',
-            price: 89.99,
-            stock: 40,
+            price: 19.99,
+            stock: 13,
             pathImage: 'https://i.pinimg.com/564x/e5/bb/08/e5bb089e840e0b95ec43918cdf8038b6.jpg',
             description: 'Zapatos deportivos casuales con suela gruesa y comodos para cualquier ocación.',
-            size: ['38', '39', '40', '41', '42', '43'],
-            color: ['Negro', 'Blanco', 'Rojo']
         }
     ];
 
@@ -160,7 +151,7 @@ export const Tienda = () => {
                 <View style={styles.iconCardHome}>
                     <Text style={styles.textIconCard}>{car.length}</Text>
                     <Icon
-                        name='shopping-cart'
+                        name='shopping-bag'
                         size={35}
                         color={SECUNDARY_COLOR}
                         onPress={() => hasProducts && setShowModal(!showModal)}

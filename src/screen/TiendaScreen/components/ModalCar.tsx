@@ -52,6 +52,7 @@ export interface Props {
                             <Text style={{ ...styles.textInformation, marginHorizontal: 10 }}>Prec.</Text>
                             <Text style={{ ...styles.textInformation, marginHorizontal: 10 }}>Cant.</Text>
                             <Text style={{ ...styles.textInformation, marginHorizontal: 10 }}>Total</Text>
+                            
                         </View>
                     </View>
 

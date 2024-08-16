@@ -12,27 +12,40 @@ import { INPUT_COMPONENT, PRIMARY_COLOR, SECUNDARY_COLOR } from '../commons/cont
         fontWeight: 'bold'
       },
       contenBody:{
-        backgroundColor:SECUNDARY_COLOR
+        backgroundColor:SECUNDARY_COLOR,
       },
       imputText:{
         backgroundColor:INPUT_COMPONENT,
         paddingHorizontal:20,
+
+        
         paddingVertical:10,
         borderRadius:10
       },
-      contentInput:{
-        marginTop:10,
-        gap:14
-      },
+      contentInput: {
+  gap: 22,
+  backgroundColor: '#b4f7f7', 
+  borderRadius: 18, 
+  padding: 30, 
+  shadowColor: '#000', 
+  shadowOffset: { width: 0, height: 4 }, 
+  shadowOpacity: 0.2, 
+ shadowRadius: 10, 
+elevation: 200, 
+borderColor: '#000', 
+borderWidth: 0.2, 
+        overflow: 'hidden', 
+    },
       button:{
         backgroundColor:PRIMARY_COLOR,
         paddingVertical:20,
-        borderRadius:10,
+        marginHorizontal:30,
+        borderRadius:70,
         marginTop:30
       },
       buttonText:{
-        color:SECUNDARY_COLOR,
-        fontSize:15,
+        color:'#000',
+        fontSize:20,
         fontWeight:'bold',
         textAlign:'center'
       },
@@ -44,7 +57,8 @@ import { INPUT_COMPONENT, PRIMARY_COLOR, SECUNDARY_COLOR } from '../commons/cont
       },
       textRedirection: {
         marginTop:30,
-        fontSize: 16, 
+        fontSize: 18, 
+        fontWeight:'bold',
         color: '#333', 
         textAlign: 'center', 
     },
@@ -57,36 +71,48 @@ import { INPUT_COMPONENT, PRIMARY_COLOR, SECUNDARY_COLOR } from '../commons/cont
   justifyContent: 'center',  
   alignItems: 'center',      
   marginBottom: 10,
-  marginLeft: 7,
+  marginVertical:2,
+  marginTop:2,
+  marginLeft: 4,
     },
     image: {
-      width: 300,
-      height: 300,
+      width: 400,
+      height: 200,
       borderRadius: 30, 
       resizeMode: 'cover', 
     },
     titleHeaderBody: {
-      fontSize: 17,
-      fontWeight: 'bold',
-      color: 'black',
-      marginTop:10
-  },
+      fontSize: 28, 
+marginLeft: 3,
+marginVertical: 20,
+fontWeight: 'bold',
+color: '#333', 
+ marginTop: 10,
+textShadowColor: '#bf5df0', 
+textShadowOffset: { width: 2, height: 2 },
+textShadowRadius: 5,
+letterSpacing: 1.2, 
+textAlign: 'center',
+fontFamily: 'Arial', 
+    },
   contentCard: {
-   flexDirection: 'row',
-  alignItems: 'center',
-  padding: 12, // Increased padding for more space
-  marginBottom: 15,
-  borderRadius: 12, // Slightly more rounded corners
-  backgroundColor: '#FAEAD8',
-  borderWidth: 1,
-  borderColor: '#8AFAE2',
-  shadowColor: '#7D4EFA',
-  shadowOffset: { width: 0, height: 4 }, // Slightly larger shadow offset
-  shadowOpacity: 0.3, // Increased shadow opacity for a more defined shadow
-  shadowRadius: 10, // Slightly larger shadow radius
-  elevation: 35, // Increased elevation for more depth
-  justifyContent: 'space-between', // Ensures proper spacing between image and text
+    marginTop: 20,
+    flexDirection: 'row',
+    marginHorizontal: 7,
+    borderStyle: 'solid',
+    alignItems: 'center',
+    padding: 6,
+    borderRadius: 12,
+    backgroundColor: '#FAEAD8', 
+    borderWidth: 2, 
+    borderColor: '#8AFAE2', 
+    shadowOffset: { width: 0, height: 0 }, 
+    shadowOpacity: 0.8, 
+    shadowRadius: 15, 
+    elevation: 10, 
+    justifyContent: 'space-between',
 },
+
   
 titleCard: {
   fontSize: 19,
@@ -116,7 +142,8 @@ titleCard: {
   },
 
   contentModal:{
-    padding: 25,
+    padding: 19,
+    paddingHorizontal:11,
     backgroundColor: SECUNDARY_COLOR,
     borderRadius: 10,
     shadowColor: '#000',
@@ -155,16 +182,16 @@ headModal: {
   elevation: 4, 
 },
 titleModal: {
-  fontSize: 20, 
+  fontSize: 18, 
   color: '#000', 
   fontWeight: '600', 
   flex: 1, 
   textAlign: 'center',
 },
 contentBodyModal: {
-  padding: 20, 
+  padding: 19, 
   backgroundColor: '#e6e6fa',
-  borderRadius: 10, 
+  borderRadius: 7, 
   shadowColor: '#000000', 
   shadowOffset: { width: 0, height: 2 },
   shadowOpacity: 0.1,
@@ -173,8 +200,8 @@ contentBodyModal: {
 },
 imageModal: {
   width: '100%', 
-  height: 260, 
-  borderRadius: 15, 
+  height: 220, 
+  borderRadius: 14, 
   borderColor: '#dddddd', 
   borderWidth: 1,
   marginBottom: 18, 
@@ -183,11 +210,11 @@ contentQuantity: {
   flexDirection: 'row',
   justifyContent: 'center',
   alignItems: 'center',
-  marginVertical: 28, 
+  marginVertical: 21, 
 },
 buttonQuantity: {
-  width: 40,
-  height: 40,
+  width: 45,
+  height: 45,
   borderRadius: 28, 
   backgroundColor: '#f5f5dc', 
   justifyContent: 'center',
@@ -207,14 +234,15 @@ textButtonQuantity: {
 textQuantity: {
   fontSize: 22, 
   color: '#333333', 
-  marginHorizontal: 15, 
+  fontWeight:'bold',
+  marginHorizontal: 13, 
   textAlign:'center'
 },
 buttonAddCar: {
   marginTop: 15,
   backgroundColor: PRIMARY_COLOR,
   borderRadius: 5,
-  paddingVertical: 10,
+  paddingVertical: 15,
   alignItems: 'center'
 },
 textButtonAddCar: {
@@ -222,7 +250,7 @@ textButtonAddCar: {
   fontWeight: 'bold'
 },
 messageStock: {
-  fontSize: 20,
+  fontSize: 26,
   fontWeight: 'bold',
   color: '#a92424',
   textAlign: 'center'
@@ -264,9 +292,44 @@ textTotalPay: {
   shadowColor: '#000', 
   
 },
-
-
-
-
-
+iconContainer: {
+alignItems: 'center', 
+justifyContent: 'center',
+    },
+iconBorder: {
+borderWidth: 2,
+borderColor: 'black',    
+borderRadius: 5, 
+padding: 5, 
+    },
+    descriptionContainer: {
+      marginTop:5,
+      padding: 10,
+      borderRadius: 8,
+backgroundColor: '#FFFAF0', 
+borderColor: '#FFD700', 
+shadowColor: '#000',
+shadowOffset: { width: 0, height: 2 },
+shadowOpacity: 0.2,
+shadowRadius: 4,
+elevation: 2,
+  },
+descriptionText: {
+fontSize: 16,
+fontWeight: '600',
+      color: '#333',
+textAlign: 'center',
+  },
+  productName: {
+  fontSize: 22,
+  fontWeight: 'bold',
+          margin: 10,
+      },
+  
 });
+
+
+
+
+
+
