@@ -71,26 +71,36 @@ import { INPUT_COMPONENT, PRIMARY_COLOR, SECUNDARY_COLOR } from '../commons/cont
       color: 'black',
       marginTop:10
   },
-  contentCard:{
-    flexDirection:'row',
-    alignItems:'center',
-    padding:15,
-    borderStyle:'solid',
-    borderColor:'black',
-    borderWidth:1,
-    marginBottom:15
-  },
-  titleCard:{
-    fontWeight:'bold',
-    color:'black',
-    fontSize:15
-  },
+  contentCard: {
+   flexDirection: 'row',
+  alignItems: 'center',
+  padding: 12, // Increased padding for more space
+  marginBottom: 15,
+  borderRadius: 12, // Slightly more rounded corners
+  backgroundColor: '#FAEAD8',
+  borderWidth: 1,
+  borderColor: '#8AFAE2',
+  shadowColor: '#7D4EFA',
+  shadowOffset: { width: 0, height: 4 }, // Slightly larger shadow offset
+  shadowOpacity: 0.3, // Increased shadow opacity for a more defined shadow
+  shadowRadius: 10, // Slightly larger shadow radius
+  elevation: 35, // Increased elevation for more depth
+  justifyContent: 'space-between', // Ensures proper spacing between image and text
+},
+  
+titleCard: {
+  fontSize: 19,
+  fontWeight: 'bold',
+  color: '#333', 
+  marginBottom: 5,
+},
+
   imageCard:{
-    width:90,
-    height:90
-
-
-  },
+    width: 140,
+    height: 140,
+    borderRadius: 10, 
+    marginRight: 15,
+},
   iconsCard:{
     flex:1,
     alignItems:'flex-end'
@@ -241,12 +251,19 @@ headerInformation: {
   flexDirection: 'row',
 },
 textInformation: {
-  marginHorizontal: 10
-}
-
-
-
-
+  fontWeight:'bold',
+  color:'#000'
+},
+textTotalPay: {
+  marginTop:5,
+  fontSize: 20, 
+  fontWeight: 'bold', 
+  color: '#000', 
+  paddingVertical: 12, 
+  paddingHorizontal: 1, 
+  shadowColor: '#000', 
+  
+},
 
 
 
