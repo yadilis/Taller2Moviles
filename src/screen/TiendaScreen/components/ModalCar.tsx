@@ -13,17 +13,26 @@ export interface Props {
     emptyCar: () => void; // Vaciar el carrito
 }
 
- export const ModalCar = ({ isVisible, car, setShowModal, emptyCar }: Props) => {
+export const ModalCar = ({ isVisible, car, setShowModal, emptyCar }: Props) => {
     const { width } = useWindowDimensions();
 
-    // Calcular el total a pagar
+    // Calcular el total a pagar sin descuento
     const totalPay = () => {
         let total: number = 0;
         car.forEach(product => {
             total += product.price * product.totalQuantity;
         });
-        return total; // Acumulación total
+        return total; // Total acumulado
     };
+
+    // Calcular el total con descuento 
+    const calculateTotalDescuento = () => {
+        const jacketQuantity = car.find(item => item.name === 'Chaqueta Jean')?.totalQuantity || 0;
+        const discount = jacketQuantity > 3 ? 0.05 : 0;
+        return totalPay() * (1 - discount);
+    };
+
+
 
     // Manejar el envío de la compra y vaciar el carrito
     const handleSendInfo = () => {
@@ -52,7 +61,6 @@ export interface Props {
                             <Text style={{ ...styles.textInformation, marginHorizontal: 10 }}>Prec.</Text>
                             <Text style={{ ...styles.textInformation, marginHorizontal: 10 }}>Cant.</Text>
                             <Text style={{ ...styles.textInformation, marginHorizontal: 10 }}>Total</Text>
-                            
                         </View>
                     </View>
 
@@ -72,6 +80,7 @@ export interface Props {
                     />
                     <View style={{ alignItems: 'flex-end' }}>
                         <Text style={styles.textTotalPay}>Total: ${totalPay().toFixed(2)}</Text>
+                        <Text style={styles.textTotalPay}>Total %5 Descuento : ${calculateTotalDescuento().toFixed(2)}</Text>
                     </View>
                     <TouchableOpacity
                         onPress={handleSendInfo}

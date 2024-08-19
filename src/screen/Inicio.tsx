@@ -8,7 +8,6 @@ import { ButtonComponent } from '../components/ButtonComponent'
 import { StatusBar } from 'expo-status-bar'
 import { PRIMARY_COLOR } from '../../commons/contsns'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { StackScreenProps } from '@react-navigation/stack'
 import { User } from '../../navigaitor/StackNavigator'
 import { CommonActions, useNavigation } from '@react-navigation/native'
 

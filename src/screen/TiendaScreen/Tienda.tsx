@@ -24,6 +24,7 @@ export interface Car {
     name: string;
     price: number;
     totalQuantity: number;
+   
 }
 
 export const Tienda = () => {
@@ -54,6 +55,7 @@ export const Tienda = () => {
             stock: 15,
             pathImage: 'https://i.pinimg.com/736x/70/61/82/706182d10cad43652419f18b9e21707a.jpg',
             description: 'Chaqueta manga larga con terminacion en botón metálico',
+            
            
         },
         {
@@ -143,6 +145,7 @@ export const Tienda = () => {
     };
 
     const hasProducts = car.length > 0; // Verifica si hay productos en el carrito
+
 
     return (
         <View>

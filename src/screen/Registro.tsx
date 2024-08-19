@@ -8,11 +8,15 @@ import { InputComponents } from '../components/InputComponents'
 import { ButtonComponent } from '../components/ButtonComponent'
 import { CommonActions, useNavigation } from '@react-navigation/native'
 import { User } from '../../navigaitor/StackNavigator'
+
+
+
+
+
 interface Props{
     users:User[];
     handleAddUse:(user:User)=>void;
 }
-
 
 interface FormRegister {
     nombre: string
